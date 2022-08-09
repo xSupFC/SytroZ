@@ -11,60 +11,6 @@ ScreenGui.Parent = game.CoreGui
 ScreenGui.ResetOnSpawn = false 
 ScreenGui.Name = "SytroLib"
 
-function Library:Update(text)
-    local Main1 = Instance.new("Frame")
-    local Title = Instance.new("TextLabel") 
-    local Main2 = Instance.new("Frame") 
-    local Open = Instance.new("TextButton")
-    
-    Main2.Name = "Main2"
-    Main2.Parent = ScreenGui
-    Main2.BackgroundColor3 = Color3.fromRGB(0, 0, 0) 
-    Main2.Size = UDim2.new(99999, 99999, 99999, 99999) 
-    Main2.Transparency = 0.2
-
-    Main1.Name = "Main"
-    Main1.Parent = ScreenGui
-    Main1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    Main1.Position = UDim2.new(0.15,0,0.1)
-    Main1.Size = UDim2.new(0, 580, 0, 370) 
-    Main1.Transparency = 1
-    Main1.BorderColor3 = Color3.fromRGB(255,0,0)
-  
-   Title.Parent = Main1
-   Title.BackgroundColor3 = Color3.new(1,1,1)
-   Title.BackgroundTransparency = 1 
-   Title.TextColor3 = Color3.new(1,1,1)
-   Title.Size = UDim2.new(0.999,0,0.2)
-   Title.Font = Enum.Font.Gotham
-   Title.FontSize = Enum.FontSize.Size14
-   Title.TextSize = 20
-   Title.TextWrapped = false
-   Title.Position = UDim2.new(0.01,0,0.3)
-   Title.Text = text or "--== UI Library Update ==-- \n\n[+] Added More Features, Designs\n[+] Added Notification, Line\n[+] Dropdown Fixed!\n[+] Fixed Bugs, Crash when executed\n\n- Press '>' to Continue -\n( UI Made by xSupFC#0945 )"
-   
-   Open.Parent = ScreenGui
-   Open.BackgroundColor3 = Color3.new(0,0,0)
-   Open.BackgroundTransparency = 1
-   Open.BorderColor3 = Color3.new(1,1,1)
-   Open.Position = UDim2.new(0.000005,0,0)
-   Open.TextColor3 = Color3.new(1,1,1) 
-   Open.Font = Enum.Font.SourceSansLight
-   Open.Size = UDim2.new(0.053,0,0.12)
-   Open.FontSize = Enum.FontSize.Size14
-   Open.Text = ">"
-   Open.TextScaled = true
-   Open.TextSize = 8
-   Open.TextWrapped = true
-
-   Open.MouseButton1Click:connect(function()
-   Main1:Destroy() 
-   Main2:Destroy()
-   Open:Destroy() 
-   wait(2)
-   ResizeOfTab()
-   end)
-end
 function Library:Notify(text, desc, wat)
 _G.Setting ={
 ["Title"] = text, 
@@ -212,7 +158,7 @@ function Library:Create(xHubName,xGameName)
     function ResizeOfTab()
         Main.Size = UDim2.new(0, 580, 0, 370)
     end
-    
+    ResizeOfTab()
     MainCorner.CornerRadius = UDim.new(0, 13)
     MainCorner.Name = "MainCorner"
     MainCorner.Parent = Main
