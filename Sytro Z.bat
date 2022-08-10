@@ -2339,46 +2339,5 @@ library:uitoggle()
     end
 end
 
-local win = library.new("Sytro Z")
-
-local page1 = win:NewPage("Main")
-local section1 = page1:NewSecction("Test1")
-local section2 = page1:NewSecction("Test2")
-
-section1:Toggle("Toggle", false, function(t)
-    print(t)
-end)
-
-section1:Button("Button", function(t)
-    library.Destroy()
-end)
-
-section1:Textbox("Notification", "Default", function(value, kuy)
-    print("Input", value)
-
-if kuy then
-    win:Notify("Test1", "Hello", value)
-    end
-end)
-     
-section2:Keybind("Toggle Keybind", Enum.KeyCode.RightControl, function()
-    print("Activated Keybind")
-    win:toggle()
-end, function()
-    print("Changed Keybind")
-end)
-section2:ColorPicker("ColorPicker", Color3.fromRGB(50, 50, 50))
-
-section2:ColorPicker("ColorPicker2")
-
-section2:Slider("Slider", 0, -100, 100, function(value)
-    print("Dragged", value)
-end)
-
-section2:Dropdown("Dropdown", {"Hello", "World", "Hello World", "Word", 1, 2, 3})
-
-section2:Dropdown("Dropdown", {"Hello", "World", "Hello World", "Word", 1, 2, 3}, function(text)
-   print("Selected", text)
-end)
 
 return library
